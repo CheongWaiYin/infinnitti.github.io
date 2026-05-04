@@ -1,138 +1,609 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Infinnitti Advisory Pte Ltd</title>
-    <style>
-        body {
-            margin: 0;
-            font-family: Arial, Helvetica, sans-serif;
-            color: #1a1a1a;
-            line-height: 1.6;
-        }
-        header {
-            background: #0b3d3b;
-            color: white;
-            padding: 80px 20px;
-            text-align: center;
-        }
-        header h1 {
-            margin: 0;
-            font-size: 36px;
-            font-weight: 700;
-        }
-        header p {
-            margin: 10px 0;
-            font-size: 18px;
-        }
-        section {
-            padding: 50px 20px;
-            max-width: 900px;
-            margin: auto;
-        }
-        h2 {
-            color: #0b3d3b;
-            margin-bottom: 10px;
-        }
-        .pillars {
-            display: flex;
-            flex-wrap: wrap;
-            gap: 20px;
-        }
-        .pillar {
-            flex: 1;
-            min-width: 250px;
-            background: #f4f4f4;
-            padding: 20px;
-            border-radius: 8px;
-        }
-        footer {
-            background: #0b3d3b;
-            color: white;
-            text-align: center;
-            padding: 30px 20px;
-            margin-top: 40px;
-        }
-    </style>
+  <meta charset="UTF-8" />
+  <title>Infinnitti Advisory</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="Infinnitti Advisory – Strategy, execution, and equity-aligned partnerships for disciplined, long-term value creation." />
+  <style>
+    :root {
+      --charcoal: #111111;
+      --charcoal-soft: #1a1a1a;
+      --bg-light: #ffffff;
+      --text-main: #111111;
+      --text-muted: #555555;
+      --border-soft: #e3e6ea;
+      --gradient: linear-gradient(135deg, #1f4e79, #00d47a);
+      --accent-soft: #d9f2ea;
+      --max-width: 1120px;
+      --radius-soft: 6px;
+      --shadow-soft: 0 14px 40px rgba(0, 0, 0, 0.18);
+    }
+
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    body {
+      font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+      background-color: var(--bg-light);
+      color: var(--text-main);
+      line-height: 1.6;
+      -webkit-font-smoothing: antialiased;
+    }
+
+    a {
+      text-decoration: none;
+      color: inherit;
+    }
+
+    img {
+      max-width: 100%;
+      display: block;
+    }
+
+    /* Layout shell */
+    .page {
+      min-height: 100vh;
+      display: flex;
+      flex-direction: column;
+      background-color: var(--bg-light);
+    }
+
+    .container {
+      width: 100%;
+      max-width: var(--max-width);
+      margin: 0 auto;
+      padding: 0 20px;
+    }
+
+    /* Header / Nav */
+    header {
+      background-color: var(--charcoal);
+      border-bottom: 1px solid rgba(255, 255, 255, 0.06);
+    }
+
+    nav {
+      height: 90px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      color: #ffffff;
+    }
+
+    nav .brand {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+}
+
+
+  nav .brand-logo {
+  width: 100px;
+  height: auto;
+  border-radius: 0;
+  background: none;
+  box-shadow: none;
+  overflow: visible;
+  display: flex;
+  align-items: center;
+}
+
+nav .brand-logo img {
+  width: 100%;
+  height: auto;
+  object-fit: contain;
+}
+
+
+
+    nav .brand-text {
+      display: flex;
+      flex-direction: column;
+      gap: 2px;
+    }
+
+    nav .brand-name {
+      font-size: 20px;
+      font-weight: 600;
+    }
+
+    nav .brand-tagline {
+      font-size: 11px;
+      text-transform: uppercase;
+      letter-spacing: 0.16em;
+      opacity: 0.7;
+    }
+
+    nav .nav-right {
+      display: flex;
+      align-items: center;
+      gap: 18px;
+      font-size: 13px;
+      opacity: 0.85;
+    }
+
+    nav .nav-pill {
+      padding: 6px 14px;
+      border-radius: 999px;
+      border: 1px solid rgba(255, 255, 255, 0.18);
+      font-size: 12px;
+      text-transform: uppercase;
+      letter-spacing: 0.16em;
+      opacity: 0.9;
+    }
+
+    /* Hero */
+    .hero {
+      background: radial-gradient(circle at top left, #1f4e79 0, #111111 40%, #000000 100%);
+      color: #ffffff;
+      padding: 72px 0 80px;
+      box-shadow: 0 18px 60px rgba(0, 0, 0, 0.45);
+    }
+
+    .hero-inner {
+      display: grid;
+      grid-template-columns: minmax(0, 3fr) minmax(0, 2.4fr);
+      gap: 56px;
+      align-items: center;
+    }
+
+    .hero-kicker {
+      font-size: 11px;
+      text-transform: uppercase;
+      letter-spacing: 0.18em;
+      opacity: 0.7;
+      margin-bottom: 16px;
+    }
+
+    .hero-title {
+      font-size: 40px;
+      line-height: 1.1;
+      font-weight: 600;
+      margin-bottom: 18px;
+    }
+
+    .hero-title span.gradient {
+      background-image: var(--gradient);
+      -webkit-background-clip: text;
+      background-clip: text;
+      color: transparent;
+    }
+
+    .hero-underline {
+      width: 120px;
+      height: 3px;
+      background-image: var(--gradient);
+      border-radius: 999px;
+      margin: 10px 0 22px;
+    }
+
+    .hero-body {
+      font-size: 14px;
+      max-width: 460px;
+      opacity: 0.82;
+    }
+
+    .hero-meta {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 18px;
+      margin-top: 26px;
+      font-size: 12px;
+      opacity: 0.8;
+    }
+
+    .hero-meta span {
+      padding-left: 10px;
+      border-left: 1px solid rgba(255, 255, 255, 0.18);
+    }
+
+    .hero-card {
+      background-color: rgba(17, 17, 17, 0.9);
+      border-radius: var(--radius-soft);
+      padding: 20px 22px;
+      border: 1px solid rgba(255, 255, 255, 0.08);
+      box-shadow: 0 18px 50px rgba(0, 0, 0, 0.6);
+    }
+
+    .hero-card-label {
+      font-size: 11px;
+      text-transform: uppercase;
+      letter-spacing: 0.16em;
+      opacity: 0.7;
+      margin-bottom: 10px;
+    }
+
+    .hero-card-main {
+      font-size: 14px;
+      opacity: 0.9;
+      margin-bottom: 16px;
+    }
+
+    .hero-card-pill {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      padding: 7px 14px;
+      border-radius: 999px;
+      background-image: var(--gradient);
+      color: #ffffff;
+      font-size: 11px;
+      text-transform: uppercase;
+      letter-spacing: 0.16em;
+      box-shadow: 0 10px 30px rgba(0, 0, 0, 0.6);
+    }
+
+    .hero-card-pill-dot {
+      width: 7px;
+      height: 7px;
+      border-radius: 50%;
+      background-color: #ffffff;
+      opacity: 0.9;
+    }
+
+    /* Sections */
+    section {
+      padding: 64px 0;
+    }
+
+    .section-header {
+      margin-bottom: 28px;
+    }
+
+    .section-kicker {
+      font-size: 11px;
+      text-transform: uppercase;
+      letter-spacing: 0.18em;
+      color: var(--text-muted);
+      margin-bottom: 10px;
+    }
+
+    .section-title {
+      font-size: 24px;
+      font-weight: 600;
+      margin-bottom: 8px;
+    }
+
+    .section-underline {
+      width: 80px;
+      height: 3px;
+      background-image: var(--gradient);
+      border-radius: 999px;
+    }
+
+    /* Why Work With Us */
+    .why-grid {
+      display: grid;
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+      gap: 22px;
+      margin-top: 10px;
+    }
+
+    .why-item {
+      padding: 18px 18px 20px;
+      border-radius: var(--radius-soft);
+      border: 1px solid var(--border-soft);
+      background-color: #ffffff;
+      box-shadow: 0 8px 26px rgba(0, 0, 0, 0.03);
+      font-size: 14px;
+    }
+
+    .why-label {
+      font-size: 12px;
+      text-transform: uppercase;
+      letter-spacing: 0.16em;
+      color: var(--text-muted);
+      margin-bottom: 6px;
+    }
+
+    .why-title {
+      font-weight: 600;
+      margin-bottom: 4px;
+    }
+
+    /* Founder */
+    .founder-layout {
+      display: grid;
+      grid-template-columns: minmax(0, 2.2fr) minmax(0, 2fr);
+      gap: 40px;
+      align-items: flex-start;
+    }
+
+    .founder-card {
+      border-radius: var(--radius-soft);
+      border: 1px solid var(--border-soft);
+      background-color: #ffffff;
+      box-shadow: var(--shadow-soft);
+      padding: 22px 22px 24px;
+      font-size: 14px;
+    }
+
+    .founder-name {
+      font-size: 18px;
+      font-weight: 600;
+      margin-bottom: 4px;
+    }
+
+    .founder-role {
+      font-size: 12px;
+      text-transform: uppercase;
+      letter-spacing: 0.16em;
+      color: var(--text-muted);
+      margin-bottom: 14px;
+    }
+
+    .founder-body {
+      color: var(--text-main);
+    }
+
+    .founder-tag {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      margin-top: 16px;
+      padding: 6px 12px;
+      border-radius: 999px;
+      background-color: var(--accent-soft);
+      font-size: 11px;
+      text-transform: uppercase;
+      letter-spacing: 0.16em;
+      color: var(--text-main);
+    }
+
+    .founder-tag-dot {
+      width: 7px;
+      height: 7px;
+      border-radius: 50%;
+      background-image: var(--gradient);
+    }
+
+    /* Footer */
+    footer {
+      background-color: var(--charcoal-soft);
+      color: #ffffff;
+      padding: 26px 0 22px;
+      border-top: 1px solid rgba(255, 255, 255, 0.06);
+      margin-top: auto;
+    }
+
+    .footer-inner {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: space-between;
+      gap: 14px;
+      font-size: 12px;
+      opacity: 0.8;
+    }
+
+    .footer-legal {
+      font-size: 12px;
+    }
+
+    .footer-accent {
+      height: 2px;
+      width: 100%;
+      background-image: var(--gradient);
+      margin-bottom: 14px;
+      border-radius: 999px;
+      opacity: 0.9;
+    }
+
+    /* Responsive */
+    @media (max-width: 900px) {
+      .hero-inner {
+        grid-template-columns: minmax(0, 1fr);
+        gap: 32px;
+      }
+
+      .hero {
+        padding: 56px 0 60px;
+      }
+
+      .why-grid {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+      }
+
+      .founder-layout {
+        grid-template-columns: minmax(0, 1fr);
+      }
+
+      nav {
+        height: auto;
+        padding: 14px 0 12px;
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 10px;
+      }
+
+      nav .nav-right {
+        font-size: 11px;
+      }
+    }
+
+    @media (max-width: 640px) {
+      .hero-title {
+        font-size: 32px;
+      }
+
+      .why-grid {
+        grid-template-columns: minmax(0, 1fr);
+      }
+
+      .container {
+        padding: 0 16px;
+      }
+    }
+  </style>
 </head>
-
 <body>
+  <div class="page">
+    <!-- Header -->
+    <header>
+      <div class="container">
+        <nav>
+          <div class="brand">
+            <div class="brand-logo">
+  <img src="infinnitti_logo_with_text_large.png" alt="Infinnitti Advisory logo" />
+</div>
 
-<header>
-    <img src="infinnitti_logo_with_text_large.png" alt="Infinnitti Advisory Logo" style="height:160px; margin-bottom:20px;">
-    <h1>Infinnitti Advisory Pte Ltd</h1>
-    <p>Strategic Advisory • Advisory-to-Equity • Investment Platform</p>
-    <p>M&A advisory for owners, investors and entrepreneurs — from strategy and value creation through to acquisitions and exits.</p>
-    <p><strong>We help founder-led companies scale with clarity, discipline, and capital intelligence.</strong></p>
-    <p>Singapore</p>
-</header>
+            <div class="brand-text">
+              <div class="brand-name">Infinnitti Advisory</div>
+              <div class="brand-tagline">Strategy • Execution • Equity</div>
+            </div>
+          </div>
+          <div class="nav-right">
+            <div class="nav-pill">Advisory‑to‑Equity</div>
+          </div>
+        </nav>
+      </div>
+    </header>
 
-<section>
-    <h2>What We Do</h2>
-    <p>
-        Infinnitti Advisory is a strategy-led advisory and investment platform focused on transforming SMEs into scalable,
-        high-performance businesses across Southeast Asia. We combine strategic diagnostics, operational restructuring,
-        and advisory-to-equity partnerships to unlock long-term enterprise value.
-    </p>
-    <ul>
-        <li>Strategic diagnostics to identify performance bottlenecks and growth opportunities</li>
-        <li>Operational restructuring to build scalable workflows and operating models</li>
-        <li>Advisory-to-equity partnerships that align incentives for long-term success</li>
-        <li>Long-term enterprise value creation through disciplined execution</li>
-    </ul>
-</section>
-
-<section>
-    <h2>Our Core Pillars</h2>
-    <div class="pillars">
-        <div class="pillar">
-            <h3>Strategic Advisory</h3>
-            <p>Diagnostics → Execution</p>
-            <p>We identify performance bottlenecks, redesign operating models, and build scalable workflows.</p>
+    <!-- Hero -->
+    <section class="hero">
+      <div class="container">
+        <div class="hero-inner">
+          <div>
+            <div class="hero-kicker">Advisory‑to‑Equity Platform</div>
+            <h1 class="hero-title">
+              <span class="gradient">Strategy • Execution • Equity</span>
+            </h1>
+            <div class="hero-underline"></div>
+            <p class="hero-body">
+              Partnering with founders and leadership teams to build scalable, disciplined, high‑performance businesses with equity‑aligned execution and long‑term value creation.
+            </p>
+            <div class="hero-meta">
+              <span>Deep strategic diagnostics</span>
+              <span>Scalable operating models</span>
+              <span>Regional market expertise</span>
+            </div>
+          </div>
+          <div>
+            <div class="hero-card">
+              <div class="hero-card-label">Advisory‑to‑Equity Alignment</div>
+              <div class="hero-card-main">
+                We combine strategic advisory, operating discipline and equity participation to align incentives, compound value and support long‑term partnership mindsets with our portfolio companies.
+              </div>
+              <div class="hero-card-pill">
+                <div class="hero-card-pill-dot"></div>
+                Long‑Term Partnership Mindset
+              </div>
+            </div>
+          </div>
         </div>
-        <div class="pillar">
-            <h3>Advisory-to-Equity Partnerships</h3>
-            <p>We partner with high-potential SMEs through structured advisory-for-equity models that align incentives and long-term value creation.</p>
+      </div>
+    </section>
+
+    <!-- Why Work With Us -->
+    <section>
+      <div class="container">
+        <div class="section-header">
+          <div class="section-kicker">Why Work With Us</div>
+          <h2 class="section-title">A disciplined, equity‑aligned partner for growth</h2>
+          <div class="section-underline"></div>
         </div>
-        <div class="pillar">
-            <h3>Investment & Portfolio Building</h3>
-            <p>We shape refined, purpose‑built portfolios that align with your strategic ambitions and deliver lasting, compounding performance.</p>
+
+        <div class="why-grid">
+          <div class="why-item">
+            <div class="why-label">01</div>
+            <div class="why-title">Deep Strategic Diagnostics</div>
+            <div>
+              We take a structured, fact‑based approach to understanding your business model, markets, economics and constraints before recommending any path forward.
+            </div>
+          </div>
+          <div class="why-item">
+            <div class="why-label">02</div>
+            <div class="why-title">Advisory‑to‑Equity Alignment</div>
+            <div>
+              We participate alongside you, aligning advisory work with equity outcomes to ensure incentives are shared and long‑term value is compounded together.
+            </div>
+          </div>
+          <div class="why-item">
+            <div class="why-label">03</div>
+            <div class="why-title">Scalable Operating Models</div>
+            <div>
+              We focus on building operating models, processes and teams that can scale sustainably, not just short‑term fixes or one‑off initiatives.
+            </div>
+          </div>
+          <div class="why-item">
+            <div class="why-label">04</div>
+            <div class="why-title">Strong Financial Discipline</div>
+            <div>
+              We bring a disciplined, investor‑grade lens to capital allocation, unit economics, risk management and performance tracking.
+            </div>
+          </div>
+          <div class="why-item">
+            <div class="why-label">05</div>
+            <div class="why-title">Regional Market Expertise</div>
+            <div>
+              We understand the nuances of operating across regional markets, sectors and regulatory environments, particularly in complex B2B ecosystems.
+            </div>
+          </div>
+          <div class="why-item">
+            <div class="why-label">06</div>
+            <div class="why-title">Long‑Term Partnership Mindset</div>
+            <div>
+              We work with founders and leadership teams as long‑term partners, not short‑term advisors, with a focus on compounding value over time.
+            </div>
+          </div>
         </div>
-    </div>
-</section>
+      </div>
+    </section>
 
-<section>
-    <h2>Profile</h2>
-    <p><strong>Cheong Wai Yin</strong><br>
-    Principal Advisor, Infinnitti Advisory Pte Ltd</p>
-    <p>
-        Wai Yin brings 30+ years of experience in business development, commercial strategy, and operational leadership across Singapore and the region.
-        His background spans senior leadership roles at MNCs in Business to Business (B2B) Environmental Industries (water, waste and energy) including Construction, Marine, Oil & Gas, Specialty Chemical, Pharmaceutical, Semiconductor, Aviation, Food and Beverages (F&B) and other sectors  
-        He now leads Infinnitti's advisory-to-equity partnerships and investment strategy, focused on disciplined execution and equity compounding.
-    </p>
-</section>
+    <!-- Founder -->
+    <section>
+      <div class="container">
+        <div class="section-header">
+          <div class="section-kicker">Leadership</div>
+          <h2 class="section-title">Leadership with operating and investment experience</h2>
+          <div class="section-underline"></div>
+        </div>
 
-<section>
-    <h2>Why Work With Us</h2>
-    <ul>
-        <li>Deep Strategic Diagnostics</li>
-        <li>Advisory-to-Equity Alignment</li>
-        <li>Scalable Operating Models</li>
-        <li>Strong Financial Discipline</li>
-        <li>Regional Market Expertise</li>
-        <li>Long-Term Partnership Mindset</li>
-    </ul>
-</section>
+        <div class="founder-layout">
+         <div class="founder-card">
+  <div class="founder-name">Cheong Wai Yin</div>
+  <div class="founder-role">Managing Director, Infinnitti Advisory</div>
+  <div class="founder-body">
+    His background spans senior leadership roles at MNCs in Business‑to‑Business (B2B) Environmental Industries (water, waste and energy) including Construction, Marine, Oil &amp; Gas, Specialty Chemical, Pharmaceutical, Semiconductor, Aviation, Food and Beverages (F&amp;B) and other sectors. He now leads Infinnitti's advisory‑to‑equity partnerships and investment strategy, focused on disciplined execution and equity compounding.
+  </div>
+  <div class="founder-tag">
+    <div class="founder-tag-dot"></div>
+    Strategy • Execution • Equity
+  </div>
+</div>
 
-<footer>
-    <p><strong>Infinnitti Advisory Pte Ltd</strong></p>
-    <p>Singapore</p>
-    <p>Email: waiyin@infinnitti.com</p>
-    <p>Website: infinnitti.com</p>
-    <p>Strategic Excellence</p>
-</footer>
+          <div>
+            <p style="font-size:14px; color:var(--text-muted); margin-bottom:10px;">
+              Infinnitti Advisory partners with founders, owners and leadership teams who are building scalable, high‑performance businesses and who value disciplined execution, transparent alignment and long‑term equity outcomes.
+            </p>
+            <p style="font-size:14px; color:var(--text-muted);">
+              We operate at the intersection of strategy, operations and capital, bringing a pragmatic, operator‑led approach to value creation while maintaining an investor‑grade mindset on risk, returns and compounding over time.
+            </p>
+          </div>
+        </div>
+      </div>
+    </section>
 
+    <!-- Footer -->
+    <footer>
+      <div class="container">
+        <div class="footer-accent"></div>
+        <div class="footer-inner">
+          <div class="footer-legal">
+            © <span id="year"></span> Infinnitti Advisory Pte Ltd. All rights reserved.
+          </div>
+          <div>
+            Strategy • Execution • Equity
+          </div>
+        </div>
+      </div>
+    </footer>
+  </div>
+
+  <script>
+    document.getElementById('year').textContent = new Date().getFullYear();
+  </script>
 </body>
 </html>
-
